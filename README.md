@@ -8,7 +8,7 @@ This project provides versions in the following languages:
 - **[簡體中文](#简体中文版本)** (Simplified Chinese)
 - **[日本語](#日本語版)** (Japanese)
 - **[Deutsch](#deutsch-version)** (German)
-- French (Français) - *Coming Soon*
+- **[Français](#version-française)** (French)
 - Russian (Русский) - *Coming Soon*
 - Italian (Italiano) - *Coming Soon*
 - Korean (한국어) - *Coming Soon*
@@ -384,3 +384,38 @@ Willkommen bei sicherheitsbezogenen Verbesserungsvorschlägen, neuen Erkennungsr
 Dieser Projektinhalt wurde gemeinsam von Cyesuta und Google Gemini Pro KI erstellt.
 
 Dieses Projekt ist unter Open-Source-Lizenz lizenziert und zielt darauf ab, sichere Entwicklungspraktiken zu fördern und die Interessen der gesamten Entwicklergemeinschaft zu schützen. Frei zu verwenden, zu modifizieren und zu verteilen, aber bitte behalten Sie Urheberrechtshinweise bei.
+
+---
+
+## Version Française
+
+[🔗 Switch to English](#english-version) | [🔗 切換到繁體中文](#繁體中文版本) | [🔗 切换到简体中文](#简体中文版本) | [🔗 日本語版に切り替え](#日本語版) | [🔗 Zur deutschen Version](#deutsch-version)
+
+## Description du Projet
+
+Ce projet vise à prévenir les problèmes de sécurité graves qui peuvent survenir lorsque des non-ingénieurs utilisent VibeCoding. Avec l'adoption généralisée des outils de génération de code IA, les développeurs non professionnels peuvent involontairement introduire des vulnérabilités de sécurité pendant le développement en raison d'une sensibilisation insuffisante à la sécurité, exposant les systèmes à des menaces potentielles. Audit de sécurité spécialement optimisé pour les problèmes courants des débutants, fournissant des mécanismes de protection ciblés.
+
+## Objectifs du Projet
+
+Fournir des mécanismes de protection de sécurité complets pour s'assurer que les projets de développement VibeCoding respectent les meilleures pratiques de sécurité :
+
+1. **Prévention pré-développement** : Fournir des directives de sécurité et de la documentation pour établir des références de sécurité pendant le développement
+2. **Vérification pré-déploiement** : Fournir des outils d'audit de sécurité automatisés pour une détection complète des risques potentiels du projet
+
+## Utilisation
+
+### Phase Pré-développement
+1. Placez les fichiers des directives de sécurité de `security-guidelines-documents/` dans le répertoire racine de votre projet VibeCoding
+2. Lisez attentivement les directives de sécurité pour vous assurer que le développement suit les normes de sécurité  
+3. **Laissez aussi VibeCoding Agent lire les directives de sécurité** : Assurez-vous que les assistants IA suivent les normes de sécurité lors de la génération de code
+
+### Phase Pré-déploiement
+1. Utilisez les outils d'audit de `security-audit-meta-prompt/`
+2. Faites lire et auditer la sécurité de l'ensemble du projet par des modèles de programmation avancés
+3. Corrigez les problèmes de sécurité trouvés dans le rapport d'audit
+
+## Licence et Droits d'Auteur
+
+Le contenu de ce projet a été co-créé par Cyesuta et Google Gemini Pro IA.
+
+Ce projet est sous licence open source, visant à promouvoir les pratiques de développement sécurisé et à protéger les intérêts de toute la communauté des développeurs. Libre d'utiliser, modifier et distribuer, mais veuillez conserver les mentions de droits d'auteur.

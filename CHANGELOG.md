@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.5.0] - 2025-08-02
+
+### Added
+- French (Français) version of all documentation files
+- New French security files:
+  - `Security-Guidelines_French.md` - Core security development checklist
+  - `Security-Guidelines-Explanation_French.md` - Detailed security explanations with hacker scenarios
+  - `Security-Audit-Prompt_French.md` - Comprehensive security audit template
+- Enhanced README.md with six-language support navigation
+
+### Changed
+- Multi-language support updated to show active French version
+- Project structure documentation updated to reflect new files
+
 ## [v1.4.0] - 2025-08-02
 
 ### Added
@@ -72,6 +86,20 @@
 ---
 
 # 更新日誌
+
+## [v1.5.0] - 2025-08-02
+
+### 新增
+- 法语(Français)版本的所有安全文件
+- 新增法语安全文件：
+  - `Security-Guidelines_French.md` - 核心安全开发检查清单
+  - `Security-Guidelines-Explanation_French.md` - 详细安全说明与黑客攻击剧本
+  - `Security-Audit-Prompt_French.md` - 完整安全审计模板
+- 增强 README.md 六语支持导航
+
+### 修改
+- 多语言支持更新显示活跃的法语版本
+- 项目结构文档更新以反映新文件
 
 ## [v1.4.0] - 2025-08-02
 
