@@ -1,5 +1,23 @@
 # Changelog
 
+## [v1.6.0] - 2025-08-02
+
+### Added
+- Russian (Русский) version of all documentation files
+- New Russian security files:
+  - `Security-Guidelines_Russian.md` - Core security development checklist
+  - `Security-Guidelines-Explanation_Russian.md` - Detailed security explanations with hacker scenarios
+  - `Security-Audit-Prompt_Russian.md` - Comprehensive security audit template
+- Enhanced README.md with seven-language support navigation
+
+### Changed
+- Multi-language support updated to show active Russian version
+- Removed redundant project structure sections from all language versions in README
+
+### Fixed
+- Completed French README with missing sections (Usage, Importance, Contributing Guide)
+- Fixed duplicate sections in French version
+
 ## [v1.5.0] - 2025-08-02
 
 ### Added
@@ -86,6 +104,24 @@
 ---
 
 # 更新日誌
+
+## [v1.6.0] - 2025-08-02
+
+### 新增
+- 俄语(Русский)版本的所有安全文件
+- 新增俄语安全文件：
+  - `Security-Guidelines_Russian.md` - 核心安全开发检查清单
+  - `Security-Guidelines-Explanation_Russian.md` - 详细安全说明与黑客攻击剧本
+  - `Security-Audit-Prompt_Russian.md` - 完整安全审计模板
+- 增强 README.md 七语支持导航
+
+### 修改
+- 多语言支持更新显示活跃的俄语版本
+- 从 README 的所有语言版本中移除冗余的项目结构章节
+
+### 修复
+- 完成法语 README 的缺失章节（使用方法、重要性、贡献指南）
+- 修复法语版本中的重复章节
 
 ## [v1.5.0] - 2025-08-02
 
