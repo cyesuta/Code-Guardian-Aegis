@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.4.0] - 2025-08-02
+
+### Added
+- German (Deutsch) version of all documentation files
+- New German security files:
+  - `Security-Guidelines_German.md` - Core security development checklist
+  - `Security-Guidelines-Explanation_German.md` - Detailed security explanations with hacker scenarios
+  - `Security-Audit-Prompt_German.md` - Comprehensive security audit template
+- Enhanced README.md with five-language support navigation
+
+### Changed
+- Multi-language support updated to show active German version
+- Project structure documentation updated to reflect new files
+
 ## [v1.3.0] - 2025-08-02
 
 ### Added
@@ -58,6 +72,20 @@
 ---
 
 # 更新日誌
+
+## [v1.4.0] - 2025-08-02
+
+### 新增
+- 德语(Deutsch)版本的所有安全文件
+- 新增德语安全文件：
+  - `Security-Guidelines_German.md` - 核心安全开发检查清单
+  - `Security-Guidelines-Explanation_German.md` - 详细安全说明与黑客攻击剧本
+  - `Security-Audit-Prompt_German.md` - 完整安全审计模板
+- 增强 README.md 五语支持导航
+
+### 修改
+- 多语言支持更新显示活跃的德语版本
+- 项目结构文档更新以反映新文件
 
 ## [v1.3.0] - 2025-08-02
 

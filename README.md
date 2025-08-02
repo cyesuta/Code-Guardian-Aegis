@@ -7,7 +7,7 @@ This project provides versions in the following languages:
 - **[繁體中文](#繁體中文版本)** (Traditional Chinese)
 - **[簡體中文](#简体中文版本)** (Simplified Chinese)
 - **[日本語](#日本語版)** (Japanese)
-- German (Deutsch) - *Coming Soon*
+- **[Deutsch](#deutsch-version)** (German)
 - French (Français) - *Coming Soon*
 - Russian (Русский) - *Coming Soon*
 - Italian (Italiano) - *Coming Soon*
@@ -305,3 +305,82 @@ VibeCoding開発プロジェクトがセキュリティベストプラクティ�
 このプロジェクトの内容は、CyesutaとGoogle Gemini Pro AIによって共同制作されました。
 
 このプロジェクトはオープンソースライセンスを採用し、安全な開発実務の推進と開発者コミュニティ全体の利益保護を目的としています。自由に使用、修正、配布できますが、著作権表示を保持してください。
+
+---
+
+## Deutsch Version
+
+[🔗 Switch to English](#english-version) | [🔗 切換到繁體中文](#繁體中文版本) | [🔗 切换到简体中文](#简体中文版本) | [🔗 日本語版に切り替え](#日本語版)
+
+## Projektbeschreibung
+
+Dieses Projekt zielt darauf ab, schwerwiegende Sicherheitsprobleme zu verhindern, die entstehen können, wenn Nicht-Ingenieure VibeCoding verwenden. Mit der weit verbreiteten Einführung von KI-Code-Generierungstools können nicht-professionelle Entwickler während der Entwicklung versehentlich Sicherheitslücken einführen, da sie nicht über ausreichendes Sicherheitsbewusstsein verfügen, wodurch Systeme potenziellen Bedrohungen ausgesetzt werden. Speziell optimierte Sicherheitsprüfung für häufige Anfängerprobleme, die gezielte Schutzmechanismen bietet.
+
+## Projektziele
+
+Bereitstellung umfassender Sicherheitsschutzmechanismen, um sicherzustellen, dass VibeCoding-Entwicklungsprojekte den Sicherheits-Best-Practices entsprechen:
+
+1. **Vorbeugung vor der Entwicklung**: Bereitstellung von Sicherheitsrichtlinien und Dokumentation zur Etablierung von Sicherheitsbaselines während der Entwicklung
+2. **Verifikation vor der Bereitstellung**: Bereitstellung automatisierter Sicherheitsprüfungstools für umfassende Erkennung potenzieller Projektrisiken
+
+## Projektstruktur
+
+```
+├── security-guidelines-documents/  # Sicherheitsrichtlinien-Dokumente
+│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
+│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
+│   ├── Security-Guidelines_Simplified-Chinese.md         # 安全开发守则 (供 AI 和开发者使用)
+│   ├── Security-Guidelines-Explanation_Simplified-Chinese.md  # 安全守则详细说明与原理解释
+│   ├── Security-Guidelines_Japanese.md         # セキュリティ開発ガイドライン（AIと開発者向け）
+│   ├── Security-Guidelines-Explanation_Japanese.md  # セキュリティガイドライン詳細説明と原理解説
+│   ├── Security-Guidelines_German.md         # Sicherheitsentwicklungsrichtlinien (für KI und Entwickler)
+│   ├── Security-Guidelines-Explanation_German.md  # Detaillierte Erklärung der Sicherheitsrichtlinien
+│   ├── 安全守则_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
+│   └── 安全守则说明_繁體中文.md     # 安全守則詳細說明與原理解釋
+├── security-audit-meta-prompt/     # Sicherheitsprüfungs-Meta-Prompt
+│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
+│   ├── Security-Audit-Prompt_Simplified-Chinese.md      # 项目安全审计指令模板
+│   ├── Security-Audit-Prompt_Japanese.md      # プロジェクトセキュリティ監査指令テンプレート
+│   ├── Security-Audit-Prompt_German.md      # Projekt-Sicherheitsprüfungs-Anweisungsvorlage
+│   └── 安全审计提示_繁體中文.md     # 專案安全審計指令模板
+├── README.md                       # Projektdokumentation
+└── CHANGELOG.md                    # Änderungsprotokoll
+```
+
+## Dateibeschreibungen
+
+### Sicherheitsrichtlinien-Dokumente (security-guidelines-documents/)
+- **[Security-Guidelines_German.md](./security-guidelines-documents/Security-Guidelines_German.md)** - Kern-Sicherheitsentwicklungs-Checkliste für Entwickler und KI-Assistenten zur Befolgung während des Entwicklungsprozesses
+- **[Security-Guidelines-Explanation_German.md](./security-guidelines-documents/Security-Guidelines-Explanation_German.md)** - Detaillierte Erklärung der Wichtigkeit jeder Sicherheitsregel, einschließlich Hacker-Angriffsszenarien und Katastrophenfolgen-Analyse
+
+### Sicherheitsprüfungstools (security-audit-meta-prompt/)
+- **[Security-Audit-Prompt_German.md](./security-audit-meta-prompt/Security-Audit-Prompt_German.md)** - Vollständige Sicherheitsprüfungs-Anweisungsvorlage für fortgeschrittene KI-Modelle zur Durchführung umfassender Projekt-Sicherheitsprüfungen
+
+## Verwendung
+
+### Vor-Entwicklungsphase
+1. Platzieren Sie Sicherheitsrichtlinien-Dateien aus `security-guidelines-documents/` in Ihr VibeCoding-Projekt-Stammverzeichnis
+2. Lesen Sie die Sicherheitsrichtlinien gründlich, um sicherzustellen, dass die Entwicklung den Sicherheitsstandards folgt
+3. **Lassen Sie auch VibeCoding Agent die Sicherheitsrichtlinien lesen**: Stellen Sie sicher, dass KI-Assistenten bei der Code-Generierung Sicherheitsstandards befolgen
+
+### Vor-Bereitstellungsphase
+1. Verwenden Sie Prüfungstools aus `security-audit-meta-prompt/`
+2. Lassen Sie fortgeschrittene Programmiermodelle die gesamte Projektsicherheit lesen und prüfen
+3. Beheben Sie Sicherheitsprobleme, die im Prüfungsbericht gefunden wurden
+
+## Wichtigkeit
+
+- **Risikominderung**: Minimierung von Sicherheitslücken aufgrund mangelnden Sicherheitswissens
+- **Qualitätsverbesserung**: Sicherstellung, dass Code Branchensicherheitsstandards erfüllt
+- **Vermögensschutz**: Verhinderung von Datenlecks oder Systemeinbrüchen durch Sicherheitsprobleme
+- **Compliance-Anforderungen**: Erfüllung von Unternehmen- oder Organisationssicherheits-Compliance-Anforderungen
+
+## Beitragsleitfaden
+
+Willkommen bei sicherheitsbezogenen Verbesserungsvorschlägen, neuen Erkennungsregeln oder Best-Practice-Fällen. Bitte stellen Sie sicher, dass alle Beiträge gründlich sicherheitsverifiziert sind.
+
+## Lizenz und Urheberrecht
+
+Dieser Projektinhalt wurde gemeinsam von Cyesuta und Google Gemini Pro KI erstellt.
+
+Dieses Projekt ist unter Open-Source-Lizenz lizenziert und zielt darauf ab, sichere Entwicklungspraktiken zu fördern und die Interessen der gesamten Entwicklergemeinschaft zu schützen. Frei zu verwenden, zu modifizieren und zu verteilen, aber bitte behalten Sie Urheberrechtshinweise bei.
