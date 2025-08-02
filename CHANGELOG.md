@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.3.0] - 2025-08-02
+
+### Added
+- Japanese (日本語) version of all documentation files
+- New Japanese security files:
+  - `Security-Guidelines_Japanese.md` - Core security development checklist
+  - `Security-Guidelines-Explanation_Japanese.md` - Detailed security explanations with hacker scenarios
+  - `Security-Audit-Prompt_Japanese.md` - Comprehensive security audit template
+- Enhanced README.md with quadrilingual support navigation
+
+### Changed
+- Multi-language support updated to show active Japanese version
+- Project structure documentation updated to reflect new files
+
 ## [v1.2.0] - 2025-08-02
 
 ### Added
@@ -44,6 +58,20 @@
 ---
 
 # 更新日誌
+
+## [v1.3.0] - 2025-08-02
+
+### 新增
+- 日本語版本的所有安全文件
+- 新增日本語安全文件：
+  - `Security-Guidelines_Japanese.md` - 核心安全开发检查清单
+  - `Security-Guidelines-Explanation_Japanese.md` - 详细安全说明与黑客攻击剧本
+  - `Security-Audit-Prompt_Japanese.md` - 完整安全审计模板
+- 增强 README.md 四语支持导航
+
+### 修改
+- 多语言支持更新显示活跃的日本語版本
+- 项目结构文档更新以反映新文件
 
 ## [v1.2.0] - 2025-08-02
 

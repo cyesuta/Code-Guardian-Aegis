@@ -6,7 +6,7 @@ This project provides versions in the following languages:
 - **[English](#english-version)** (Current)
 - **[繁體中文](#繁體中文版本)** (Traditional Chinese)
 - **[簡體中文](#简体中文版本)** (Simplified Chinese)
-- Japanese (日本語) - *Coming Soon*
+- **[日本語](#日本語版)** (Japanese)
 - German (Deutsch) - *Coming Soon*
 - French (Français) - *Coming Soon*
 - Russian (Русский) - *Coming Soon*
@@ -229,3 +229,79 @@ This project is open source licensed, aiming to promote secure development pract
 本项目内容由 Cyesuta 与 Google Gemini Pro AI 共同创作完成。
 
 本项目采用开源授权，旨在推广安全开发实务，保护整个开发者社群的利益。欢迎自由使用、修改和分发，但请保留著作权声明。
+
+---
+
+## 日本語版
+
+[🔗 Switch to English](#english-version) | [🔗 切換到繁體中文](#繁體中文版本) | [🔗 切换到简体中文](#简体中文版本)
+
+## プロジェクト概要
+
+このプロジェクトは、非エンジニアがVibeCodingを使用する際に発生する可能性のある深刻なセキュリティ問題を防ぐことを目的としています。AIコード生成ツールの普及に伴い、専門的でない開発者が十分なセキュリティ意識なしに開発を行うと、無意識のうちにセキュリティ脆弱性を導入し、システムを潜在的な脅威にさらす可能性があります。特に初心者によくある問題に最適化されたセキュリティ監査を提供し、的を絞った保護メカニズムを提供します。
+
+## プロジェクト目標
+
+VibeCoding開発プロジェクトがセキュリティベストプラクティスに準拠することを保証する包括的なセキュリティ保護メカニズムを提供します：
+
+1. **開発前予防**：セキュリティガイドラインと文書を提供し、開発時のセキュリティベースラインを確立
+2. **デプロイ前検証**：自動化されたセキュリティ監査ツールを提供し、プロジェクトの潜在的リスクを包括的に検出
+
+## プロジェクト構造
+
+```
+├── security-guidelines-documents/  # セキュリティガイドライン文書
+│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
+│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
+│   ├── Security-Guidelines_Simplified-Chinese.md         # 安全开发守则 (供 AI 和开发者使用)
+│   ├── Security-Guidelines-Explanation_Simplified-Chinese.md  # 安全守则详细说明与原理解释
+│   ├── Security-Guidelines_Japanese.md         # セキュリティ開発ガイドライン（AIと開発者向け）
+│   ├── Security-Guidelines-Explanation_Japanese.md  # セキュリティガイドライン詳細説明と原理解説
+│   ├── 安全守则_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
+│   └── 安全守则说明_繁體中文.md     # 安全守則詳細說明與原理解釋
+├── security-audit-meta-prompt/     # セキュリティ監査メタプロンプト
+│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
+│   ├── Security-Audit-Prompt_Simplified-Chinese.md      # 项目安全审计指令模板
+│   ├── Security-Audit-Prompt_Japanese.md      # プロジェクトセキュリティ監査指令テンプレート
+│   └── 安全审计提示_繁體中文.md     # 專案安全審計指令模板
+├── README.md                       # プロジェクトドキュメント
+└── CHANGELOG.md                    # 変更ログ
+```
+
+## ファイル説明
+
+### セキュリティガイドライン文書 (security-guidelines-documents/)
+- **[Security-Guidelines_Japanese.md](./security-guidelines-documents/Security-Guidelines_Japanese.md)** - 開発者とAIアシスタントが開発プロセスで従うべき核心セキュリティ開発チェックリスト
+- **[Security-Guidelines-Explanation_Japanese.md](./security-guidelines-documents/Security-Guidelines-Explanation_Japanese.md)** - 各セキュリティルールの重要性の詳細説明、ハッカー攻撃シナリオと災害結果分析を含む
+
+### セキュリティ監査ツール (security-audit-meta-prompt/)
+- **[Security-Audit-Prompt_Japanese.md](./security-audit-meta-prompt/Security-Audit-Prompt_Japanese.md)** - 高度なAIモデルが包括的なプロジェクトセキュリティチェックを実行するための完全なセキュリティ監査指令テンプレート
+
+## 使用方法
+
+### 開発前段階
+1. `security-guidelines-documents/`のセキュリティガイドラインファイルをVibeCodingプロジェクトのルートディレクトリに配置
+2. セキュリティガイドラインを詳しく読み、開発プロセスがセキュリティ基準に従うことを確認
+3. **VibeCoding Agentにもセキュリティガイドラインを読ませる**：AIアシスタントがコード生成時にセキュリティ基準に従うことを確保
+
+### デプロイ前段階
+1. `security-audit-meta-prompt/`の監査ツールを使用
+2. 高度なプログラミングモデルにプロジェクト全体のセキュリティを読み取り、監査させる
+3. 監査レポートで発見されたセキュリティ問題を修正
+
+## 重要性
+
+- **リスク軽減**：セキュリティ知識不足による脆弱性を最小化
+- **品質向上**：コードが業界セキュリティ基準を満たすことを保証
+- **資産保護**：セキュリティ問題によるデータ漏洩やシステム侵入を防止
+- **コンプライアンス要件**：企業や組織のセキュリティコンプライアンス要件を満たす
+
+## 貢献ガイド
+
+セキュリティ関連の改善提案、新しい検出ルール、ベストプラクティス事例の提出を歓迎します。すべての貢献内容が十分にセキュリティ検証されていることを確認してください。
+
+## ライセンスと著作権
+
+このプロジェクトの内容は、CyesutaとGoogle Gemini Pro AIによって共同制作されました。
+
+このプロジェクトはオープンソースライセンスを採用し、安全な開発実務の推進と開発者コミュニティ全体の利益保護を目的としています。自由に使用、修正、配布できますが、著作権表示を保持してください。
