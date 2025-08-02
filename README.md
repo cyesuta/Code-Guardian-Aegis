@@ -34,20 +34,6 @@ Provide comprehensive security protection mechanisms to ensure VibeCoding develo
 1. **Pre-development Prevention**: Provide security guidelines and documentation to establish security baselines during development
 2. **Pre-deployment Verification**: Provide automated security audit tools for comprehensive detection of potential project risks
 
-## Project Structure
-
-```
-├── security-guidelines-documents/  # Security Guidelines Documents
-│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
-│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
-│   ├── 安全守則_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
-│   └── 安全守則說明_繁體中文.md     # 安全守則詳細說明與原理解釋
-├── security-audit-meta-prompt/     # Security Audit Meta Prompt
-│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
-│   └── 安全審計提示_繁體中文.md     # 專案安全審計指令模板
-├── README.md                       # Project Documentation
-└── CHANGELOG.md                    # Change Log
-```
 
 ## File Descriptions
 
@@ -104,20 +90,6 @@ This project is open source licensed, aiming to promote secure development pract
 1. **開發前預防**：提供安全守則與指導文件，建立開發時的安全基準
 2. **上線前檢核**：提供自動化安全審計工具，全面檢測專案潛在風險
 
-## 專案結構
-
-```
-├── security-guidelines-documents/  # 安全守則文件
-│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
-│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
-│   ├── 安全守則_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
-│   └── 安全守則說明_繁體中文.md     # 安全守則詳細說明與原理解釋
-├── security-audit-meta-prompt/     # 安全審計元提示
-│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
-│   └── 安全審計提示_繁體中文.md     # 專案安全審計指令模板
-├── README.md                       # 專案說明文件
-└── CHANGELOG.md                    # 更新日誌
-```
 
 ## 文件說明
 
@@ -174,23 +146,6 @@ This project is open source licensed, aiming to promote secure development pract
 1. **开发前预防**：提供安全守则与指导文件，建立开发时的安全基准
 2. **上线前检核**：提供自动化安全审计工具，全面检测项目潜在风险
 
-## 项目结构
-
-```
-├── security-guidelines-documents/  # 安全守则文件
-│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
-│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
-│   ├── Security-Guidelines_Simplified-Chinese.md         # 安全开发守则 (供 AI 和开发者使用)
-│   ├── Security-Guidelines-Explanation_Simplified-Chinese.md  # 安全守则详细说明与原理解释
-│   ├── 安全守则_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
-│   └── 安全守则说明_繁體中文.md     # 安全守則詳細說明與原理解釋
-├── security-audit-meta-prompt/     # 安全审计元提示
-│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
-│   ├── Security-Audit-Prompt_Simplified-Chinese.md      # 项目安全审计指令模板
-│   └── 安全审计提示_繁體中文.md     # 專案安全審計指令模板
-├── README.md                       # 项目说明文件
-└── CHANGELOG.md                    # 更新日志
-```
 
 ## 文件说明
 
@@ -247,26 +202,6 @@ VibeCoding開発プロジェクトがセキュリティベストプラクティ�
 1. **開発前予防**：セキュリティガイドラインと文書を提供し、開発時のセキュリティベースラインを確立
 2. **デプロイ前検証**：自動化されたセキュリティ監査ツールを提供し、プロジェクトの潜在的リスクを包括的に検出
 
-## プロジェクト構造
-
-```
-├── security-guidelines-documents/  # セキュリティガイドライン文書
-│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
-│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
-│   ├── Security-Guidelines_Simplified-Chinese.md         # 安全开发守则 (供 AI 和开发者使用)
-│   ├── Security-Guidelines-Explanation_Simplified-Chinese.md  # 安全守则详细说明与原理解释
-│   ├── Security-Guidelines_Japanese.md         # セキュリティ開発ガイドライン（AIと開発者向け）
-│   ├── Security-Guidelines-Explanation_Japanese.md  # セキュリティガイドライン詳細説明と原理解説
-│   ├── 安全守则_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
-│   └── 安全守则说明_繁體中文.md     # 安全守則詳細說明與原理解釋
-├── security-audit-meta-prompt/     # セキュリティ監査メタプロンプト
-│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
-│   ├── Security-Audit-Prompt_Simplified-Chinese.md      # 项目安全审计指令模板
-│   ├── Security-Audit-Prompt_Japanese.md      # プロジェクトセキュリティ監査指令テンプレート
-│   └── 安全审计提示_繁體中文.md     # 專案安全審計指令模板
-├── README.md                       # プロジェクトドキュメント
-└── CHANGELOG.md                    # 変更ログ
-```
 
 ## ファイル説明
 
@@ -323,29 +258,6 @@ Bereitstellung umfassender Sicherheitsschutzmechanismen, um sicherzustellen, das
 1. **Vorbeugung vor der Entwicklung**: Bereitstellung von Sicherheitsrichtlinien und Dokumentation zur Etablierung von Sicherheitsbaselines während der Entwicklung
 2. **Verifikation vor der Bereitstellung**: Bereitstellung automatisierter Sicherheitsprüfungstools für umfassende Erkennung potenzieller Projektrisiken
 
-## Projektstruktur
-
-```
-├── security-guidelines-documents/  # Sicherheitsrichtlinien-Dokumente
-│   ├── Security-Guidelines_English.md         # Security Development Guidelines (for AI and developers)
-│   ├── Security-Guidelines-Explanation_English.md  # Detailed explanation of security rules
-│   ├── Security-Guidelines_Simplified-Chinese.md         # 安全开发守则 (供 AI 和开发者使用)
-│   ├── Security-Guidelines-Explanation_Simplified-Chinese.md  # 安全守则详细说明与原理解释
-│   ├── Security-Guidelines_Japanese.md         # セキュリティ開発ガイドライン（AIと開発者向け）
-│   ├── Security-Guidelines-Explanation_Japanese.md  # セキュリティガイドライン詳細説明と原理解説
-│   ├── Security-Guidelines_German.md         # Sicherheitsentwicklungsrichtlinien (für KI und Entwickler)
-│   ├── Security-Guidelines-Explanation_German.md  # Detaillierte Erklärung der Sicherheitsrichtlinien
-│   ├── 安全守则_繁體中文.md         # 安全開發守則 (供 AI 和開發者使用)
-│   └── 安全守则说明_繁體中文.md     # 安全守則詳細說明與原理解釋
-├── security-audit-meta-prompt/     # Sicherheitsprüfungs-Meta-Prompt
-│   ├── Security-Audit-Prompt_English.md      # Project security audit instruction template
-│   ├── Security-Audit-Prompt_Simplified-Chinese.md      # 项目安全审计指令模板
-│   ├── Security-Audit-Prompt_Japanese.md      # プロジェクトセキュリティ監査指令テンプレート
-│   ├── Security-Audit-Prompt_German.md      # Projekt-Sicherheitsprüfungs-Anweisungsvorlage
-│   └── 安全审计提示_繁體中文.md     # 專案安全審計指令模板
-├── README.md                       # Projektdokumentation
-└── CHANGELOG.md                    # Änderungsprotokoll
-```
 
 ## Dateibeschreibungen
 
@@ -402,6 +314,16 @@ Fournir des mécanismes de protection de sécurité complets pour s'assurer que 
 1. **Prévention pré-développement** : Fournir des directives de sécurité et de la documentation pour établir des références de sécurité pendant le développement
 2. **Vérification pré-déploiement** : Fournir des outils d'audit de sécurité automatisés pour une détection complète des risques potentiels du projet
 
+
+## Description des Fichiers
+
+### Documents des Directives de Sécurité (security-guidelines-documents/)
+- **[Security-Guidelines_French.md](./security-guidelines-documents/Security-Guidelines_French.md)** - Liste de contrôle de développement sécurisé principal pour les développeurs et assistants IA à suivre pendant le processus de développement
+- **[Security-Guidelines-Explanation_French.md](./security-guidelines-documents/Security-Guidelines-Explanation_French.md)** - Explication détaillée de l'importance de chaque règle de sécurité, incluant les scénarios d'attaque de hackers et l'analyse des conséquences catastrophiques
+
+### Outils d'Audit de Sécurité (security-audit-meta-prompt/)
+- **[Security-Audit-Prompt_French.md](./security-audit-meta-prompt/Security-Audit-Prompt_French.md)** - Modèle d'instructions d'audit de sécurité complet pour que les modèles IA avancés effectuent des vérifications de sécurité de projet complètes
+
 ## Utilisation
 
 ### Phase Pré-développement
@@ -413,6 +335,17 @@ Fournir des mécanismes de protection de sécurité complets pour s'assurer que 
 1. Utilisez les outils d'audit de `security-audit-meta-prompt/`
 2. Faites lire et auditer la sécurité de l'ensemble du projet par des modèles de programmation avancés
 3. Corrigez les problèmes de sécurité trouvés dans le rapport d'audit
+
+## Importance
+
+- **Réduction des Risques** : Minimiser les vulnérabilités de sécurité causées par le manque de connaissances en sécurité
+- **Amélioration de la Qualité** : S'assurer que le code répond aux normes de sécurité de l'industrie
+- **Protection des Actifs** : Prévenir les fuites de données ou les intrusions système dues à des problèmes de sécurité
+- **Exigences de Conformité** : Répondre aux exigences de conformité de sécurité d'entreprise ou d'organisation
+
+## Guide de Contribution
+
+Bienvenue aux suggestions d'amélioration liées à la sécurité, nouvelles règles de détection ou cas de meilleures pratiques. Veuillez vous assurer que toutes les contributions sont soigneusement vérifiées en matière de sécurité.
 
 ## Licence et Droits d'Auteur
 
