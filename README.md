@@ -425,57 +425,61 @@ Ce projet est sous licence open source, visant à promouvoir les pratiques de d�
 
 ## Versione Italiana
 
-[🔗 Back to Top](#code-guardian-aegis-vibecoding新手盾)
+[🔗 Torna all'inizio](#code-guardian-aegis-vibecoding新手盾)
 
 ## Descrizione del Progetto
 
-Questo progetto mira a prevenire seri problemi di sicurezza che possono sorgere quando non-ingegneri utilizzano VibeCoding. Con l'adozione diffusa di strumenti di generazione di codice AI, sviluppatori non professionali possono involontariamente introdurre vulnerabilità di sicurezza durante lo sviluppo a causa di insufficiente consapevolezza della sicurezza, esponendo i sistemi a potenziali minacce. Audit di sicurezza specificamente ottimizzato per problemi comuni dei principianti, fornendo meccanismi di protezione mirati.
+Questo progetto mira a prevenire i gravi problemi di sicurezza che possono sorgere quando persone senza competenze ingegneristiche utilizzano VibeCoding. Con la crescente adozione di strumenti di IA per la generazione di codice, gli sviluppatori non professionisti possono, involontariamente, introdurre vulnerabilità di sicurezza a causa di una scarsa consapevolezza del problema, esponendo i sistemi a potenziali minacce. Il progetto offre un audit di sicurezza ottimizzato specificamente per i problemi più comuni tra i principianti, fornendo meccanismi di protezione mirati.
 
 ## Obiettivi del Progetto
 
-Fornire meccanismi di protezione di sicurezza completi per garantire che i progetti di sviluppo VibeCoding rispettino le migliori pratiche di sicurezza:
+Fornire meccanismi di sicurezza completi per garantire che i progetti sviluppati con VibeCoding siano conformi alle migliori pratiche di sicurezza:
 
-1. **Prevenzione pre-sviluppo**: Fornire linee guida di sicurezza e documentazione per stabilire baseline di sicurezza durante lo sviluppo
-2. **Verifica pre-distribuzione**: Fornire strumenti di audit di sicurezza automatizzati per il rilevamento completo di potenziali rischi del progetto
+1.  **Prevenzione prima dello sviluppo**: Offrire linee guida e documentazione di sicurezza per stabilire una solida base fin dall'inizio.
+2.  **Verifica prima della distribuzione**: Mettere a disposizione strumenti di audit di sicurezza automatizzati per un rilevamento completo dei rischi potenziali del progetto.
 
-## Descrizioni dei File
+## Descrizione dei File
 
 ### Documenti delle Linee Guida di Sicurezza (security-guidelines-documents/)
-- **[Security-Guidelines_Italian.md](./security-guidelines-documents/Security-Guidelines_Italian.md)** - Lista di controllo principale per lo sviluppo sicuro per sviluppatori e assistenti AI da seguire durante il processo di sviluppo
-- **[Security-Guidelines-Explanation_Italian.md](./security-guidelines-documents/Security-Guidelines-Explanation_Italian.md)** - Spiegazione dettagliata dell'importanza di ogni regola di sicurezza, inclusi scenari di attacco hacker e analisi delle conseguenze catastrofiche
+
+-   **[Security-Guidelines_Italian.md](./security-guidelines-documents/Security-Guidelines_Italian.md)** - Una lista di controllo centrale per lo sviluppo sicuro, da seguire sia per gli sviluppatori che per gli assistenti IA.
+-   **[Security-Guidelines-Explanation_Italian.md](./security-guidelines-documents/Security-Guidelines-Explanation_Italian.md)** - Una spiegazione dettagliata dell'importanza di ogni regola di sicurezza, che include scenari di attacco e un'analisi delle possibili conseguenze.
 
 ### Strumenti di Audit di Sicurezza (security-audit-meta-prompt/)
-- **[Security-Audit-Prompt_Italian.md](./security-audit-meta-prompt/Security-Audit-Prompt_Italian.md)** - Template di istruzioni di audit di sicurezza completo per modelli AI avanzati per condurre controlli di sicurezza del progetto completi
+
+-   **[Security-Audit-Prompt_Italian.md](./security-audit-meta-prompt/Security-Audit-Prompt_Italian.md)** - Un modello completo di istruzioni per consentire a un modello di IA avanzato di eseguire un audit di sicurezza completo del progetto.
 
 ## Utilizzo
 
-### Fase Pre-sviluppo
-1. Posiziona i file delle linee guida di sicurezza da `security-guidelines-documents/` nella directory radice del tuo progetto VibeCoding
-2. Leggi attentamente le linee guida di sicurezza per assicurarti che lo sviluppo segua gli standard di sicurezza
-3. **Lascia che anche VibeCoding Agent legga le linee guida di sicurezza**: Assicurati che gli assistenti AI seguano gli standard di sicurezza quando generano codice
+### Fase di pre-sviluppo
 
-### Fase Pre-distribuzione
-1. Usa gli strumenti di audit da `security-audit-meta-prompt/`
-2. Lascia che modelli di programmazione avanzati leggano e auditino la sicurezza dell'intero progetto
-3. Correggi i problemi di sicurezza trovati nel rapporto di audit
-4. Elimina i rapporti di audit di sicurezza dalle directory di upload per evitare che vengano scaricati e diventino preoccupazioni di sicurezza
+1.  Inserisci i file delle linee guida di sicurezza dalla cartella `security-guidelines-documents/` nella directory principale del tuo progetto VibeCoding.
+2.  Leggi attentamente le linee guida per assicurarti che il processo di sviluppo rispetti gli standard di sicurezza.
+3.  **Assicurati che anche l'Agente VibeCoding legga le linee guida**: Ciò garantisce che anche il codice generato dall'IA aderisca agli standard di sicurezza.
+
+### Fase di pre-distribuzione
+
+1.  Utilizza gli strumenti di audit della cartella `security-audit-meta-prompt/`.
+2.  Consenti a un modello di programmazione avanzato di leggere e verificare la sicurezza dell'intero progetto.
+3.  Risolvi i problemi di sicurezza identificati nel rapporto di audit.
+4.  Elimina i rapporti di audit dalle cartelle di caricamento per evitare che vengano scaricati e diventino un nuovo rischio per la sicurezza.
 
 ## Importanza
 
-- **Riduzione del Rischio**: Minimizzare le vulnerabilità di sicurezza causate dalla mancanza di conoscenza di sicurezza
-- **Miglioramento della Qualità**: Assicurare che il codice soddisfi gli standard di sicurezza dell'industria
-- **Protezione degli Asset**: Prevenire fughe di dati o intrusioni di sistema dovute a problemi di sicurezza
-- **Requisiti di Conformità**: Soddisfare i requisiti di conformità di sicurezza aziendali o organizzativi
+-   **Riduzione dei rischi**: Minimizza le vulnerabilità di sicurezza causate dalla mancanza di conoscenze tecniche.
+-   **Miglioramento della qualità**: Assicura che il codice sia conforme agli standard di sicurezza del settore.
+-   **Protezione degli asset**: Previene fughe di dati e intrusioni nel sistema dovute a problemi di sicurezza.
+-   **Conformità normativa**: Aiuta a soddisfare i requisiti di sicurezza e conformità di aziende e organizzazioni.
 
-## Guida ai Contributi
+## Contributi
 
-Benvenuti suggerimenti di miglioramento legati alla sicurezza, nuove regole di rilevamento o casi di migliori pratiche. Si prega di assicurarsi che tutti i contributi siano accuratamente verificati per la sicurezza.
+Qualsiasi suggerimento di miglioramento, nuove regole di rilevamento o esempi di buone pratiche sono benvenuti. Si prega di assicurarsi che tutti i contributi siano stati accuratamente verificati dal punto di vista della sicurezza.
 
 ## Licenza e Copyright
 
-Il contenuto di questo progetto è stato co-creato da Cyesuta e Google Gemini Pro AI.
+Il contenuto di questo progetto è stato creato congiuntamente da Cyesuta e dall'IA di Google Gemini Pro.
 
-Questo progetto è sotto licenza open source, mirato a promuovere pratiche di sviluppo sicuro e proteggere gli interessi dell'intera comunità di sviluppatori. Libero di usare, modificare e distribuire, ma si prega di mantenere gli avvisi di copyright.
+Questo progetto è distribuito con una licenza open source con l'obiettivo di promuovere pratiche di sviluppo sicure e di proteggere gli interessi dell'intera comunità di sviluppatori. Il contenuto può essere utilizzato, modificato e distribuito liberamente, a condizione che vengano mantenute le note sul copyright.
 
 ---
 
@@ -877,54 +881,58 @@ Dit project valt onder een open source-licentie en heeft als doel veilige ontwik
 
 ## Phiên bản Tiếng Việt
 
-[🔗 Back to Top](#code-guardian-aegis-vibecoding新手盾)
+[🔗 Quay lại đầu trang](#code-guardian-aegis-vibecoding新手盾)
 
 ## Mô tả Dự án
 
-Dự án này nhằm ngăn chặn các vấn đề bảo mật nghiêm trọng có thể phát sinh khi những người không phải kỹ sư sử dụng VibeCoding. Với việc áp dụng rộng rãi các công cụ tạo mã AI, các nhà phát triển không chuyên nghiệp có thể vô tình đưa vào các lỗ hổng bảo mật trong quá trình phát triển do thiếu nhận thức bảo mật đầy đủ, khiến hệ thống tiếp xúc với các mối đe dọa tiềm ẩn. Kiểm toán bảo mật được tối ưu hóa đặc biệt cho các vấn đề phổ biến của người mới bắt đầu, cung cấp các cơ chế bảo vệ có mục tiêu.
+Dự án này nhằm ngăn chặn các vấn đề bảo mật nghiêm trọng có thể phát sinh khi những người không có chuyên môn kỹ thuật sử dụng VibeCoding. Với sự phổ biến của các công cụ tạo mã bằng AI, các nhà phát triển không chuyên có thể vô tình tạo ra các lỗ hổng bảo mật do thiếu nhận thức đầy đủ, khiến hệ thống dễ bị tấn công. Dự án này cung cấp một quy trình kiểm toán bảo mật được tối ưu hóa đặc biệt cho các vấn đề thường gặp ở người mới bắt đầu, cùng với các cơ chế bảo vệ có mục tiêu.
 
 ## Mục tiêu Dự án
 
-Cung cấp các cơ chế bảo vệ bảo mật toàn diện để đảm bảo các dự án phát triển VibeCoding tuân thủ các thực hành tốt nhất về bảo mật:
+Cung cấp các cơ chế bảo mật toàn diện để đảm bảo rằng các dự án phát triển bằng VibeCoding tuân thủ các tiêu chuẩn bảo mật tốt nhất:
 
-1. **Phòng ngừa trước phát triển**: Cung cấp hướng dẫn bảo mật và tài liệu để thiết lập đường cơ sở bảo mật trong quá trình phát triển
-2. **Xác minh trước triển khai**: Cung cấp các công cụ kiểm toán bảo mật tự động để phát hiện toàn diện các rủi ro tiềm ẩn của dự án
+1.  **Phòng ngừa trước khi phát triển**: Cung cấp các hướng dẫn và tài liệu bảo mật để thiết lập một nền tảng an toàn ngay từ đầu.
+2.  **Xác minh trước khi triển khai**: Cung cấp các công cụ kiểm toán bảo mật tự động để phát hiện toàn diện các rủi ro tiềm ẩn trong dự án.
 
 ## Mô tả Tệp
 
 ### Tài liệu Hướng dẫn Bảo mật (security-guidelines-documents/)
-- **[Security-Guidelines_Vietnamese.md](./security-guidelines-documents/Security-Guidelines_Vietnamese.md)** - Danh sách kiểm tra phát triển bảo mật cốt lõi cho các nhà phát triển và trợ lý AI tuân theo trong quá trình phát triển
-- **[Security-Guidelines-Explanation_Vietnamese.md](./security-guidelines-documents/Security-Guidelines-Explanation_Vietnamese.md)** - Giải thích chi tiết về tầm quan trọng của từng quy tắc bảo mật, bao gồm các kịch bản tấn công của hacker và phân tích hậu quả thảm khốc
+
+-   **[Security-Guidelines_Vietnamese.md](./security-guidelines-documents/Security-Guidelines_Vietnamese.md)** - Một danh sách kiểm tra cốt lõi về phát triển an toàn dành cho các nhà phát triển và trợ lý AI.
+-   **[Security-Guidelines-Explanation_Vietnamese.md](./security-guidelines-documents/Security-Guidelines-Explanation_Vietnamese.md)** - Giải thích chi tiết về tầm quan trọng của từng quy tắc bảo mật, bao gồm các kịch bản tấn công và phân tích hậu quả có thể xảy ra.
 
 ### Công cụ Kiểm toán Bảo mật (security-audit-meta-prompt/)
-- **[Security-Audit-Prompt_Vietnamese.md](./security-audit-meta-prompt/Security-Audit-Prompt_Vietnamese.md)** - Mẫu hướng dẫn kiểm toán bảo mật hoàn chỉnh cho các mô hình AI tiên tiến thực hiện kiểm tra bảo mật dự án toàn diện
+
+-   **[Security-Audit-Prompt_Vietnamese.md](./security-audit-meta-prompt/Security-Audit-Prompt_Vietnamese.md)** - Một mẫu hướng dẫn hoàn chỉnh để các mô hình AI tiên tiến thực hiện kiểm toán bảo mật toàn diện cho dự án.
 
 ## Sử dụng
 
-### Giai đoạn Trước Phát triển
-1. Đặt các tệp hướng dẫn bảo mật từ `security-guidelines-documents/` vào thư mục gốc của dự án VibeCoding của bạn
-2. Đọc kỹ các hướng dẫn bảo mật để đảm bảo phát triển tuân theo các tiêu chuẩn bảo mật
-3. **Để VibeCoding Agent cũng đọc các hướng dẫn bảo mật**: Đảm bảo các trợ lý AI tuân theo các tiêu chuẩn bảo mật khi tạo mã
+### Giai đoạn trước khi phát triển
 
-### Giai đoạn Trước Triển khai
-1. Sử dụng các công cụ kiểm toán từ `security-audit-meta-prompt/`
-2. Để các mô hình lập trình tiên tiến đọc và kiểm toán bảo mật của toàn bộ dự án
-3. Sửa các vấn đề bảo mật được tìm thấy trong báo cáo kiểm toán
-4. Xóa các báo cáo kiểm toán bảo mật khỏi các thư mục tải lên để ngăn chúng bị tải xuống và trở thành mối lo ngại bảo mật
+1.  Đặt các tệp hướng dẫn bảo mật từ thư mục `security-guidelines-documents/` vào thư mục gốc của dự án VibeCoding.
+2.  Đọc kỹ các hướng dẫn để đảm bảo quy trình phát triển tuân thủ các tiêu chuẩn bảo mật.
+3.  **Hãy để VibeCoding Agent cũng đọc các hướng dẫn bảo mật**: Điều này đảm bảo rằng mã được tạo ra bởi AI cũng tuân thủ các tiêu chuẩn an toàn.
+
+### Giai đoạn trước khi triển khai
+
+1.  Sử dụng các công cụ kiểm toán từ thư mục `security-audit-meta-prompt/`.
+2.  Yêu cầu một mô hình lập trình tiên tiến đọc và kiểm toán toàn bộ dự án.
+3.  Sửa các vấn đề bảo mật được phát hiện trong báo cáo kiểm toán.
+4.  Xóa các báo cáo kiểm toán khỏi thư mục tải lên để ngăn chặn việc chúng bị tải xuống và trở thành một rủi ro bảo mật.
 
 ## Tầm quan trọng
 
-- **Giảm Rủi ro**: Giảm thiểu các lỗ hổng bảo mật do thiếu kiến thức bảo mật
-- **Cải thiện Chất lượng**: Đảm bảo mã đáp ứng các tiêu chuẩn bảo mật của ngành
-- **Bảo vệ Tài sản**: Ngăn chặn rò rỉ dữ liệu hoặc xâm nhập hệ thống do các vấn đề bảo mật
-- **Yêu cầu Tuân thủ**: Đáp ứng các yêu cầu tuân thủ bảo mật của doanh nghiệp hoặc tổ chức
+-   **Giảm thiểu rủi ro**: Giảm thiểu các lỗ hổng bảo mật phát sinh do thiếu kiến thức chuyên môn.
+-   **Nâng cao chất lượng**: Đảm bảo mã nguồn tuân thủ các tiêu chuẩn bảo mật của ngành.
+-   **Bảo vệ tài sản**: Ngăn chặn rò rỉ dữ liệu hoặc các cuộc xâm nhập hệ thống do các vấn đề bảo mật.
+-   **Tuân thủ quy định**: Giúp đáp ứng các yêu cầu về bảo mật và tuân thủ của doanh nghiệp và tổ chức.
 
 ## Hướng dẫn Đóng góp
 
-Chào mừng các đề xuất cải tiến liên quan đến bảo mật, quy tắc phát hiện mới hoặc các trường hợp thực hành tốt nhất. Vui lòng đảm bảo tất cả đóng góp được xác minh bảo mật kỹ lưỡng.
+Chúng tôi hoan nghênh mọi đề xuất cải tiến, quy tắc phát hiện mới hoặc chia sẻ các phương pháp hay nhất. Vui lòng đảm bảo rằng tất cả các đóng góp đã được kiểm tra kỹ lưỡng về mặt bảo mật.
 
 ## Giấy phép và Bản quyền
 
-Nội dung của dự án này được đồng tạo bởi Cyesuta và Google Gemini Pro AI.
+Nội dung của dự án này được đồng sáng tạo bởi Cyesuta và AI Google Gemini Pro.
 
-Dự án này sử dụng giấy phép mã nguồn mở, nhằm thúc đẩy các thực hành phát triển an toàn và bảo vệ lợi ích của toàn bộ cộng đồng nhà phát triển. Tự do sử dụng, chỉnh sửa và phân phối, nhưng vui lòng giữ các thông báo bản quyền.
+Dự án này được phân phối dưới giấy phép mã nguồn mở nhằm thúc đẩy các phương pháp phát triển an toàn và bảo vệ lợi ích của toàn bộ cộng đồng nhà phát triển. Nội dung có thể được sử dụng, sửa đổi và phân phối tự do, miễn là các thông báo về bản quyền được giữ nguyên.
