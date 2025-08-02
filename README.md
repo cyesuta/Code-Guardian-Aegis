@@ -1,5 +1,28 @@
 # Code Guardian Aegis (VibeCoding新手盾)
 
+## Multi-language Support
+
+This project provides versions in the following languages:
+- **[English](#english-version)** (Current)
+- **[繁體中文](#繁體中文版本)** (Traditional Chinese)
+- Simplified Chinese (簡體中文) - *Coming Soon*
+- Japanese (日本語) - *Coming Soon*
+- German (Deutsch) - *Coming Soon*
+- French (Français) - *Coming Soon*
+- Russian (Русский) - *Coming Soon*
+- Italian (Italiano) - *Coming Soon*
+- Korean (한국어) - *Coming Soon*
+- Spanish (Español) - *Coming Soon*
+- Portuguese (Português) - *Coming Soon*
+- Arabic (العربية) - *Coming Soon*
+- Dutch (Nederlands) - *Coming Soon*
+- Thai (ไทย) - *Coming Soon*
+- Vietnamese (Tiếng Việt) - *Coming Soon*
+
+---
+
+## English Version
+
 ## Project Description
 
 This project aims to prevent serious security issues that may arise when non-engineers use VibeCoding. With the widespread adoption of AI code generation tools, non-professional developers may inadvertently introduce security vulnerabilities during development due to insufficient security awareness, exposing systems to potential threats. Specifically optimized security auditing for common novice issues, providing targeted protection mechanisms.
@@ -31,12 +54,9 @@ Provide comprehensive security protection mechanisms to ensure VibeCoding develo
 ### Security Guidelines Documents (security-guidelines-documents/)
 - **[Security-Guidelines_English.md](./security-guidelines-documents/Security-Guidelines_English.md)** - Core security development checklist for developers and AI assistants to follow during development
 - **[Security-Guidelines-Explanation_English.md](./security-guidelines-documents/Security-Guidelines-Explanation_English.md)** - Detailed explanation of each security rule's importance, including hacker attack scenarios and disaster consequence analysis
-- **[安全守則_繁體中文.md](./security-guidelines-documents/安全守則_繁體中文.md)** - 核心安全開發檢查清單，供開發者和 AI 助手在開發過程中遵循
-- **[安全守則說明_繁體中文.md](./security-guidelines-documents/安全守則說明_繁體中文.md)** - 詳細解釋每條安全規則的重要性，包含駭客攻擊劇本和災難後果分析
 
 ### Security Audit Tools (security-audit-meta-prompt/)
 - **[Security-Audit-Prompt_English.md](./security-audit-meta-prompt/Security-Audit-Prompt_English.md)** - Complete security audit instruction template for advanced AI models to conduct comprehensive project security checks
-- **[安全審計提示_繁體中文.md](./security-audit-meta-prompt/安全審計提示_繁體中文.md)** - 完整的安全審計指令模板，用於讓高級 AI 模型進行全面的專案安全檢查
 
 ## Usage
 
@@ -67,28 +87,11 @@ This project content is co-created by Cyesuta and Google Gemini Pro AI.
 
 This project is open source licensed, aiming to promote secure development practices and protect the interests of the entire developer community. Free to use, modify, and distribute, but please retain copyright notices.
 
-## Multi-language Support
-
-This project provides versions in the following languages:
-- English
-- Traditional Chinese (繁體中文)
-- Simplified Chinese (簡體中文)
-- Japanese (日本語)
-- German (Deutsch)
-- French (Français)
-- Russian (Русский)
-- Italian (Italiano)
-- Korean (한국어)
-- Spanish (Español)
-- Portuguese (Português)
-- Arabic (العربية)
-- Dutch (Nederlands)
-- Thai (ไทย)
-- Vietnamese (Tiếng Việt)
-
 ---
 
-# Code Guardian Aegis (VibeCoding新手盾)
+## 繁體中文版本
+
+[🔗 切換到英文版本](#english-version)
 
 ## 專案描述
 
@@ -119,13 +122,10 @@ This project provides versions in the following languages:
 ## 文件說明
 
 ### 安全守則文件 (security-guidelines-documents/)
-- **[Security-Guidelines_English.md](./security-guidelines-documents/Security-Guidelines_English.md)** - Core security development checklist for developers and AI assistants to follow during development
-- **[Security-Guidelines-Explanation_English.md](./security-guidelines-documents/Security-Guidelines-Explanation_English.md)** - Detailed explanation of each security rule's importance, including hacker attack scenarios and disaster consequence analysis
 - **[安全守則_繁體中文.md](./security-guidelines-documents/安全守則_繁體中文.md)** - 核心安全開發檢查清單，供開發者和 AI 助手在開發過程中遵循
 - **[安全守則說明_繁體中文.md](./security-guidelines-documents/安全守則說明_繁體中文.md)** - 詳細解釋每條安全規則的重要性，包含駭客攻擊劇本和災難後果分析
 
 ### 安全審計工具 (security-audit-meta-prompt/)
-- **[Security-Audit-Prompt_English.md](./security-audit-meta-prompt/Security-Audit-Prompt_English.md)** - Complete security audit instruction template for advanced AI models to conduct comprehensive project security checks
 - **[安全審計提示_繁體中文.md](./security-audit-meta-prompt/安全審計提示_繁體中文.md)** - 完整的安全審計指令模板，用於讓高級 AI 模型進行全面的專案安全檢查
 
 ## 使用方法
@@ -156,22 +156,3 @@ This project provides versions in the following languages:
 本專案內容由 Cyesuta 與 Google Gemini Pro AI 共同創作完成。
 
 本專案採用開源授權，旨在推廣安全開發實務，保護整個開發者社群的利益。歡迎自由使用、修改和分發，但請保留著作權聲明。
-
-## 多語言支援
-
-本專案提供以下語言版本：
-- 英文 (English)
-- 繁體中文 (Traditional Chinese)
-- 簡體中文 (Simplified Chinese) 
-- 日文 (Japanese)
-- 德文 (German)
-- 法文 (French)
-- 俄文 (Russian)
-- 意大利文 (Italian)
-- 韓文 (Korean)
-- 西班牙文 (Spanish)
-- 葡萄牙文 (Portuguese)
-- 阿拉伯文 (Arabic)
-- 荷蘭文 (Dutch)
-- 泰文 (Thai)
-- 越南文 (Vietnamese)

@@ -11,19 +11,6 @@ Provide comprehensive security protection mechanisms to ensure VibeCoding develo
 1. **Pre-development Prevention**: Provide security guidelines and documentation to establish security baselines during development
 2. **Pre-deployment Verification**: Provide automated security audit tools for comprehensive detection of potential project risks
 
----
-
-## 專案描述
-
-本專案旨在防止非工程師使用 VibeCoding 時可能引發的嚴重資安問題。隨著 AI 程式碼生成工具的普及，非專業開發者在缺乏足夠資安意識的情況下進行開發，可能無意中引入安全漏洞，導致系統暴露於潛在威脅之下。特別針對新手常見問題優化安全審計，提供針對性的防護機制。
-
-## 專案目標
-
-提供完整的安全防護機制，確保使用 VibeCoding 開發的專案符合資安最佳實務：
-
-1. **開發前預防**：提供安全守則與指導文件，建立開發時的安全基準
-2. **上線前檢核**：提供自動化安全審計工具，全面檢測專案潛在風險
-
 ## Project Structure
 
 ```
@@ -74,7 +61,45 @@ Provide comprehensive security protection mechanisms to ensure VibeCoding develo
 
 Welcome security-related improvement suggestions, new detection rules, or best practice cases. Please ensure all contributions are thoroughly security-verified.
 
+## License and Copyright
+
+This project content is co-created by Cyesuta and Google Gemini Pro AI.
+
+This project is open source licensed, aiming to promote secure development practices and protect the interests of the entire developer community. Free to use, modify, and distribute, but please retain copyright notices.
+
+## Multi-language Support
+
+This project provides versions in the following languages:
+- English
+- Traditional Chinese (繁體中文)
+- Simplified Chinese (簡體中文)
+- Japanese (日本語)
+- German (Deutsch)
+- French (Français)
+- Russian (Русский)
+- Italian (Italiano)
+- Korean (한국어)
+- Spanish (Español)
+- Portuguese (Português)
+- Arabic (العربية)
+- Dutch (Nederlands)
+- Thai (ไทย)
+- Vietnamese (Tiếng Việt)
+
 ---
+
+# Code Guardian Aegis (VibeCoding新手盾)
+
+## 專案描述
+
+本專案旨在防止非工程師使用 VibeCoding 時可能引發的嚴重資安問題。隨著 AI 程式碼生成工具的普及，非專業開發者在缺乏足夠資安意識的情況下進行開發，可能無意中引入安全漏洞，導致系統暴露於潛在威脅之下。特別針對新手常見問題優化安全審計，提供針對性的防護機制。
+
+## 專案目標
+
+提供完整的安全防護機制，確保使用 VibeCoding 開發的專案符合資安最佳實務：
+
+1. **開發前預防**：提供安全守則與指導文件，建立開發時的安全基準
+2. **上線前檢核**：提供自動化安全審計工具，全面檢測專案潛在風險
 
 ## 專案結構
 
@@ -125,33 +150,6 @@ Welcome security-related improvement suggestions, new detection rules, or best p
 ## 貢獻指南
 
 歡迎提交安全相關的改進建議、新的檢測規則或最佳實務案例。請確保所有貢獻內容都經過充分的安全性驗證。
-
-## License and Copyright
-
-This project content is co-created by Cyesuta and Google Gemini Pro AI.
-
-This project is open source licensed, aiming to promote secure development practices and protect the interests of the entire developer community. Free to use, modify, and distribute, but please retain copyright notices.
-
-## Multi-language Support
-
-This project provides versions in the following languages:
-- English
-- Traditional Chinese (繁體中文)
-- Simplified Chinese (簡體中文)
-- Japanese (日本語)
-- German (Deutsch)
-- French (Français)
-- Russian (Русский)
-- Italian (Italiano)
-- Korean (한국어)
-- Spanish (Español)
-- Portuguese (Português)
-- Arabic (العربية)
-- Dutch (Nederlands)
-- Thai (ไทย)
-- Vietnamese (Tiếng Việt)
-
----
 
 ## 授權與著作權
 
