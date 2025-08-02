@@ -1,5 +1,19 @@
 # Changelog
 
+## [v1.2.0] - 2025-08-02
+
+### Added
+- Simplified Chinese (简体中文) version of all documentation files
+- New Simplified Chinese security files:
+  - `Security-Guidelines_Simplified-Chinese.md` - Core security development checklist
+  - `Security-Guidelines-Explanation_Simplified-Chinese.md` - Detailed security explanations with hacker scenarios
+  - `Security-Audit-Prompt_Simplified-Chinese.md` - Comprehensive security audit template
+- Enhanced README.md with trilingual support navigation
+
+### Changed
+- Multi-language support updated to show active Simplified Chinese version
+- Project structure documentation updated to reflect new files
+
 ## [v1.1.0] - 2025-08-02
 
 ### Added
@@ -30,6 +44,20 @@
 ---
 
 # 更新日誌
+
+## [v1.2.0] - 2025-08-02
+
+### 新增
+- 简体中文版本的所有安全文件
+- 新增简体中文安全文件：
+  - `Security-Guidelines_Simplified-Chinese.md` - 核心安全开发检查清单
+  - `Security-Guidelines-Explanation_Simplified-Chinese.md` - 详细安全说明与黑客攻击剧本
+  - `Security-Audit-Prompt_Simplified-Chinese.md` - 完整安全审计模板
+- 增强 README.md 三语支持导航
+
+### 修改
+- 多语言支持更新显示活跃的简体中文版本
+- 项目结构文档更新以反映新文件
 
 ## [v1.1.0] - 2025-08-02
 
