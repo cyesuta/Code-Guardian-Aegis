@@ -23,6 +23,8 @@ This project provides versions in the following languages:
 
 ## English Version
 
+![Security Audit Report Screenshot](./sc.jpg)
+
 ## Project Description
 
 This project aims to prevent serious security issues that may arise when non-engineers use VibeCoding. With the widespread adoption of AI code generation tools, non-professional developers may inadvertently introduce security vulnerabilities during development due to insufficient security awareness, exposing systems to potential threats. Specifically optimized security auditing for common novice issues, providing targeted protection mechanisms.
