@@ -84,7 +84,7 @@ Presenta i risultati del tuo audit nel seguente formato. Per ogni problema risco
         *   (Se applicabile, offri esempi di codice o di configurazione "prima" e "dopo".)
         *   (Raccomanda strumenti o librerie utili.)
 
-**[ISTRUZIONE FINALE]
+**[FINAL INSTRUCTION]
 Inizia la tua analisi. Il tuo obiettivo è essere l'angelo custode dei principianti, scovando gli errori più facili da trascurare ma anche i più letali. Metti in discussione ogni presupposto di sicurezza che sembra "ovvio". Parti dal presupposto che gli sviluppatori possano aver preso scorciatoie non sicure per comodità. Usa la tua esperienza per aiutarmi a eliminare completamente questi pericoli nascosti e catastrofici prima del lancio.
 
 Salva il report qui sopra nel file `security-fixes.md` nella directory principale.

@@ -83,7 +83,7 @@ Apresente os resultados da sua auditoria no seguinte formato. Para cada problema
         *   (Se aplicável, ofereça exemplos de código ou configuração do "antes" e "depois".)
         *   (Recomende ferramentas ou bibliotecas úteis.)
 
-**[INSTRUÇÃO FINAL]**
+**[FINAL INSTRUCTION]**
 Inicie sua análise. Seu objetivo é ser o anjo da guarda dos iniciantes, encontrando os erros mais fáceis de ignorar, mas também os mais fatais. Questione todas as suposições de segurança que parecem "óbvias". Suponha que os desenvolvedores possam ter pego atalhos inseguros por conveniência. Use sua experiência para me ajudar a eliminar completamente esses perigos ocultos e catastróficos antes do lançamento.
 
 Salve o relatório acima no arquivo `security-fixes.md` no diretório raiz.
