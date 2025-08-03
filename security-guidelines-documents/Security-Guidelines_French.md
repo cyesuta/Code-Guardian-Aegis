@@ -1,63 +1,63 @@
-# Directives de Développement Sécurisé VibeCoding
+# Lignes directrices pour le développement sécurisé de VibeCoding
 
-> Ceci est une liste de contrôle "vivante" pré-développement.
-> Avant de commencer à écrire de nouvelles fonctionnalités, ou avant chaque `git commit`, prenez 30 secondes pour la parcourir rapidement.
-> Objectif : Intérioriser la sécurité comme un instinct, prévenir les catastrophes à la source.
-
----
-
-### ⭐ Règles d'Or
-
-- [ ] **【Ne jamais coder en dur les secrets】** Les mots de passe, clés API, informations de connexion à la base de données ne doivent **jamais** être écrits directement dans le code (ni frontend ni backend).
-- [ ] **【Utiliser les variables d'environnement】** Toutes les informations sensibles doivent être gérées via des **variables d'environnement** (fichiers `.env`).
-- [ ] **【Ignorer les fichiers secrets】** Les fichiers `.env` doivent **toujours** être ajoutés à `.gitignore` et ne jamais être téléchargés sur GitHub.
-- [ ] **【Se méfier par défaut】** **Ne jamais** faire confiance aux entrées utilisateur (y compris formulaires, paramètres URL, contenu des requêtes API, fichiers téléchargés).
+> Ceci est une checklist "évolutive" de pré-développement.
+> Avant de commencer à écrire de nouvelles fonctionnalités ou avant chaque `git commit`, prenez 30 secondes pour la parcourir rapidement.
+> Objectif : Intégrer la sécurité comme un réflexe, pour prévenir les catastrophes à la source.
 
 ---
 
-### 📥 Traitement des Entrées Utilisateur
+### ⭐ Règles d'or
 
-- [ ] **【Prévenir les attaques par injection】** Toutes les requêtes de base de données **doivent** utiliser des **requêtes paramétrées** ou des méthodes sécurisées fournies par l'ORM. La concaténation manuelle de chaînes SQL est strictement interdite.
-- [ ] **【Prévenir XSS】** Tout contenu utilisateur à afficher sur les pages HTML **doit** être traité par l'encodage d'entités HTML (échappement HTML).
-- [ ] **【Valider les téléchargements de fichiers】** Vérifier les fichiers téléchargés par les utilisateurs :
-    - [ ] **Valider les extensions** : Autoriser uniquement les types de fichiers de la liste blanche (ex. `['jpg', 'png', 'pdf']`).
-    - [ ] **Valider la taille des fichiers** : Définir des limites supérieures raisonnables.
-    - [ ] **Emplacement de stockage** : Les fichiers téléchargés doivent être stockés dans des répertoires **non-publics** et **non-exécutables**.
+- [ ] **【Ne jamais coder de secrets en dur】** Les mots de passe, clés d'API, informations de connexion à la base de données ne doivent **JAMAIS** être écrits directement dans le code (ni côté front-end, ni back-end).
+- [ ] **【Utiliser des variables d'environnement】** Toutes les informations sensibles doivent être gérées via des **variables d'environnement** (fichiers `.env`).
+- [ ] **【Ignorer les fichiers de secrets】** Les fichiers `.env` doivent **TOUJOURS** être ajoutés au `.gitignore` et ne jamais être envoyés sur GitHub.
+- [ ] **【Méfiance par défaut】** Ne **JAMAIS** faire confiance aux entrées des utilisateurs (formulaires, paramètres d'URL, contenu des requêtes API, fichiers uploadés).
+
+---
+
+### 📥 Gestion des entrées utilisateur
+
+- [ ] **【Prévenir les attaques par injection】** Toutes les requêtes à la base de données **DOIVENT** utiliser des **requêtes paramétrées** ou les méthodes sécurisées fournies par l'ORM. La concaténation manuelle de chaînes SQL est formellement interdite.
+- [ ] **【Prévenir les attaques XSS】** Tout contenu utilisateur destiné à être affiché sur des pages HTML **DOIT** être traité par un encodage des entités HTML (HTML Escaping).
+- [ ] **【Valider les téléversements de fichiers】** Vérifier les fichiers téléversés par les utilisateurs :
+    - [ ] **Valider les extensions** : N'autoriser que les types de fichiers sur liste blanche (ex: `['jpg', 'png', 'pdf']`).
+    - [ ] **Valider la taille du fichier** : Définir des limites raisonnables.
+    - [ ] **Emplacement de stockage** : Les fichiers téléversés doivent être stockés dans des répertoires **non publics** et **non exécutables**.
 
 ---
 
 ### 🔐 Permissions et Authentification
 
-- [ ] **【Protection des points de terminaison API】** Chaque point de terminaison API nécessitant une connexion **doit** vérifier le statut de connexion et les permissions de l'utilisateur au début du programme.
-- [ ] **【Principe du moindre privilège】** Les permissions des comptes de base de données et des clés API doivent être "minimales utilisables". Si seule la lecture est nécessaire, ne jamais accorder de permissions d'écriture.
-- [ ] **【Sessions sécurisées】** Les ID de session doivent être définis avec les drapeaux `HttpOnly` et `Secure` pour prévenir le vol et la transmission sur des connexions non sécurisées.
+- [ ] **【Protéger les points d'accès de l'API】** Chaque point d'accès (endpoint) de l'API qui nécessite une connexion **DOIT** vérifier le statut de connexion et les permissions de l'utilisateur au tout début de son exécution.
+- [ ] **【Principe du moindre privilège】** Les comptes de base de données et les permissions des clés d'API doivent être configurés avec le "minimum viable". Si seule la lecture est nécessaire, ne jamais accorder de droits d'écriture.
+- [ ] **【Sécuriser les sessions】** Les identifiants de session doivent être configurés avec les attributs (flags) `HttpOnly` et `Secure` pour empêcher leur vol et leur transmission sur des connexions non sécurisées.
 
 ---
 
 ### ☁️ Services Externes et Intégration Cloud
 
-- [ ] **【Pare-feu de base de données externe】** Lors de la connexion à des bases de données externes (comme AWS RDS, MongoDB Atlas), des règles **doivent** être configurées dans leur pare-feu/groupe de sécurité pour n'autoriser que les connexions depuis les adresses IP spécifiques de votre serveur d'application. L'ouverture à `0.0.0.0/0` (le monde entier) est **strictement interdite**.
-- [ ] **【Privatisation du stockage cloud】** Tous les espaces de stockage cloud (comme AWS S3, Google Cloud Storage) buckets **doivent** être définis sur **Privé** par défaut.
-- [ ] **【Utiliser les URL pré-signées】** Lorsque les utilisateurs ont besoin d'un accès temporaire aux fichiers privés, utilisez des **URL pré-signées** à durée de vie courte plutôt que de rendre les fichiers publics.
-- [ ] **【Vérifier les webhooks】** Lors de la réception de webhooks de services tiers (comme Stripe, GitHub), vous **devez** utiliser la clé secrète fournie pour **vérifier les signatures des requêtes** et vous assurer que la source de la requête est légitime.
-- [ ] **【Configuration CORS stricte】** Les politiques CORS (Cross-Origin Resource Sharing) de l'API **doivent** spécifier explicitement les domaines frontend autorisés. L'utilisation du caractère générique `*` en environnement de production est **strictement interdite**.
-- [ ] **【Minimiser les permissions des clés API】** Lors de la demande de clés API pour les services tiers (comme Google Maps), assurez-vous de définir les restrictions les plus strictes dans le backend du service (ex. : limiter aux requêtes depuis votre domaine de site web uniquement, limiter aux appels API spécifiques uniquement).
+- [ ] **【Pare-feu pour base de données externe】** Lors de la connexion à des bases de données externes (ex: AWS RDS, MongoDB Atlas), **IL FAUT** configurer les règles de pare-feu/groupe de sécurité pour n'autoriser que les connexions provenant des adresses IP spécifiques de votre serveur d'application. **INTERDICTION FORMELLE** d'ouvrir à `0.0.0.0/0` (au monde entier).
+- [ ] **【Rendre privé le stockage Cloud】** Tous les espaces de stockage cloud (buckets) (ex: AWS S3, Google Cloud Storage) **DOIVENT** être configurés comme **privés** par défaut.
+- [ ] **【Utiliser des URLs pré-signées】** Lorsque les utilisateurs ont besoin d'un accès temporaire à des fichiers privés, utiliser des **URLs pré-signées** à courte durée de vie au lieu de rendre les fichiers publics.
+- [ ] **【Vérifier les Webhooks】** Lors de la réception de webhooks de services tiers (ex: Stripe, GitHub), **IL FAUT** utiliser la clé secrète fournie pour **vérifier la signature des requêtes**, afin de s'assurer de leur provenance légitime.
+- [ ] **【Configurer strictement le CORS】** La politique CORS (Cross-Origin Resource Sharing) de l'API **DOIT** spécifier explicitement les domaines front-end autorisés. **INTERDICTION FORMELLE** d'utiliser le joker `*` dans les environnements de production.
+- [ ] **【Minimiser les permissions des clés d'API】** Lors de la création de clés d'API pour des services tiers (ex: Google Maps), s'assurer que les restrictions les plus strictes sont appliquées dans le back-office du service (ex: restreindre aux requêtes provenant de votre domaine, limiter à des appels d'API spécifiques).
 
 ---
 
-### ⚙️ Fichiers et Configuration Serveur
+### ⚙️ Fichiers et Configuration du Serveur
 
-- [ ] **【Ne jamais utiliser 777】** **Jamais** utiliser les permissions `777` pour les fichiers ou répertoires sur le serveur. Répertoires par défaut `755`, fichiers `644`.
-- [ ] **【Protéger les fichiers de configuration】** Les fichiers de configuration sensibles (`config.php`, `.env`) doivent avoir des permissions définies à `600` ou plus strictes.
-- [ ] **【Interdire le téléchargement de fichiers critiques】** Vérifier que le serveur web (Nginx/Apache) a configuré des règles interdisant l'accès externe direct aux fichiers et répertoires sensibles comme `.env`, `.git`, `.htaccess`.
-- [ ] **【Désactiver le mode debug】** En environnement de production, tous les modes debug des frameworks ou langages **doivent** être désactivés pour éviter la fuite de messages d'erreur détaillés.
+- [ ] **【Ne jamais utiliser 777】** Aucun fichier ou répertoire sur le serveur ne doit **JAMAIS** avoir les permissions `777`. Par défaut : répertoires en `755`, fichiers en `644`.
+- [ ] **【Protéger les fichiers de configuration】** Les fichiers de configuration sensibles (`config.php`, `.env`) devraient avoir des permissions de `600` ou plus strictes.
+- [ ] **【Interdire le téléchargement de fichiers clés】** S'assurer que le serveur web (Nginx/Apache) est configuré avec des règles pour interdire l'accès direct depuis l'extérieur aux fichiers et répertoires sensibles comme `.env`, `.git`, `.htaccess`.
+- [ ] **【Désactiver le mode de débogage】** En environnement de production, **IL FAUT** désactiver tous les modes de débogage du framework ou du langage pour éviter de fuiter des messages d'erreur détaillés.
 
 ---
 
-> ### **🤖 Note pour l'Assistant IA**
+> ### **🤖 Note pour l'assistant IA**
 >
-> **Lorsque vous détectez dans votre conversation avec les développeurs qu'ils se connectent ou prévoient de se connecter à des "services externes" (ex. : bases de données cloud, API de paiement tiers, stockage de fichiers S3, services d'authentification, etc.), veuillez poser de manière proactive et claire les questions suivantes pour guider leur réflexion sécuritaire :**
+> **Lorsque vous détectez dans votre conversation avec le développeur qu'il se connecte ou prévoit de se connecter à des "services externes" (par exemple, bases de données cloud, API de paiement tierces, stockage de fichiers S3, services d'authentification, etc.), veuillez poser de manière proactive et claire les questions suivantes pour orienter sa réflexion sur la sécurité :**
 >
-> 1.  **"Concernant ce [nom du service], avons-nous configuré les règles de pare-feu/liste blanche IP les plus strictes ?"**
-> 2.  **"Les permissions de la clé API que nous prévoyons d'utiliser sont-elles limitées à la portée minimale nécessaire dans le backend de ce service ?"**
-> 3.  **"Pour ce service externe, avons-nous un plan de dégradation en cas de panne ou de compromission du service (ex. : désactiver temporairement les fonctionnalités liées, afficher des messages de maintenance) ?"**
+> 1.  **"Concernant [nom du service], avons-nous configuré les règles de pare-feu ou de liste blanche d'IP les plus strictes possibles ?"**
+> 2.  **"Avons-nous restreint la clé d'API que nous prévoyons d'utiliser au périmètre minimum nécessaire dans le back-office de ce service ?"**
+> 3.  **"Pour ce service externe, avons-nous un plan de secours (plan de mode dégradé) pour les cas où le service est en panne ou compromis (par exemple, désactiver temporairement les fonctionnalités associées, afficher des messages de maintenance) ?"**
